@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+<package name="com.zm.MyAction" extends="struts-default" namespace="/">
+    <global-results>
+        <result name="EXCEPTION" type="dispatcher">
+            exception.jsp
+        </result>
+    </global-results>
+    <action name="myAction_*" class="com.zm.MyAction" method="{1}">
+        <result name="my" type="dispatcher">
+            /my/my.jsp
+        </result>
+        <!--配置action允许访问的方法-->
+        <allowed-methods>*</allowed-methods>
+    </action>
+</package>
+</struts>
